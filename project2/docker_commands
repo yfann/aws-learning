@@ -10,7 +10,7 @@ docker logs bd4c2b23cb4e
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
- * Serving Flask app 'app' (lazy loading)
+  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
@@ -33,3 +33,5 @@ docker logs bd4c2b23cb4e
 172.17.0.1 - - [09/Oct/2022 09:02:01] "POST /create HTTP/1.1" 302 -
 172.17.0.1 - - [09/Oct/2022 09:02:01] "GET / HTTP/1.1" 200 -
 172.17.0.1 - - [09/Oct/2022 09:02:01] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [09/Oct/2022 09:08:40] "GET /metrics HTTP/1.1" 200 -
+172.17.0.1 - - [09/Oct/2022 09:08:54] "GET /healthz HTTP/1.1" 200 -
