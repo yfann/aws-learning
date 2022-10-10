@@ -1,0 +1,11 @@
+project: default
+source:
+  repoURL: 'https://gitee.com/yfann2000/techtrends'
+  path: .
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values-staging.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: staging
