@@ -19,7 +19,7 @@ resources:
     memory: "128Mi"
     CPU: "350m"
   limits:
-    momory: "256Mi"
+    memory: "256Mi"
     CPU: "500m"
 
 containerPort: 3111
