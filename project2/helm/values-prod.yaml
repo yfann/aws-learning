@@ -1,0 +1,31 @@
+namespace:
+  name: prod
+
+service:
+  port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: yfann/techtrends
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 5
+
+resources:
+  reqeusts:
+    memory: "128Mi"
+    CPU: "350m"
+  limits:
+    momory: "256Mi"
+    CPU: "500m"
+
+containerPort: 3111
+
+livenessProbe:
+  path: /healthz
+
+readinessProbe:
+  path: /healthz
