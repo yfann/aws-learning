@@ -1,5 +1,6 @@
 import sqlite3
 import logging
+import sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
@@ -22,13 +23,19 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
-    app.logger.info(' Article "%s" retrieved!', post["title"])
+    if post is not None:
+        app.logger.info(' Article "%s" retrieved!', post["title"])
     return post
 
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
-app.logger.setLevel(logging.DEBUG)
+# set logger to handle STDOUT and STDERR 
+stdout_handler =  logging.StreamHandler(sys.stdout)
+stderr_handler =   logging.StreamHandler(sys.stderr)
+handlers = [stderr_handler, stdout_handler]
+
+logging.basicConfig(level=logging.DEBUG, handlers=handlers)
 
 # Define the main route of the web application 
 @app.route('/')
