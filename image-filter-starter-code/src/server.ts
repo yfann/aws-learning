@@ -52,7 +52,7 @@ import { Request, Response } from 'express';
         }
       )
     }else{
-      res.status(500)
+      res.status(400)
       res.send("image_url is not valid")
     }
 
