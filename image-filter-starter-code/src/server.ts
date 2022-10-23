@@ -1,14 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
-import validUrl from 'valid-url'
+import { Request, Response } from 'express';
 (async () => {
 
   // Init the Express application
   const app = express();
 
   // Set the network port
-  const port = process.env.PORT || 8082;
+  const port = process.env.PORT || 80;
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
@@ -37,10 +37,11 @@ import validUrl from 'valid-url'
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
-  app.get( "/filteredimage", async ( req, res ) => {
-    if (req.query.image_url && validUrl.isUri(req.query.image_url)){
+  app.get( "/filteredimage", async ( req: Request, res: Response ) => {
+    if (req.query.image_url){
       filterImageFromURL(req.query.image_url).then(
         (filepath)=>{
+          res.status(200)
           res.sendFile(filepath,function (err) {
             try {
               deleteLocalFiles([filepath])
@@ -51,6 +52,7 @@ import validUrl from 'valid-url'
         }
       )
     }else{
+      res.status(500)
       res.send("image_url is not valid")
     }
 

@@ -28,6 +28,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 ```
 
 test link: http://localhost:8082/filteredimage?image_url=https://c-ssl.duitang.com/uploads/item/202002/23/20200223202027_kbslm.thumb.1000_0.jpeg
+http://localhost/filteredimage?image_url=https://c-ssl.duitang.com/uploads/item/202002/23/20200223202027_kbslm.thumb.1000_0.jpeg
 
 ### Deploying your system
 
