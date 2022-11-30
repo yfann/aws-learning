@@ -16,6 +16,8 @@
 
 ![Alt text](./answer-img/basic-dashboard.png)
 
+![Alt text](./answer-img/grafana_datasource.png)
+
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
