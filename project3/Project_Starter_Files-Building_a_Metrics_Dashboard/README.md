@@ -21,9 +21,9 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
-+ avarage Latency/30d
-+ availability/30d
-+ avarage Response time/30d
++ Latency:  the average response latency in a month
++ Throughput:  the average request per minute in a month
++ error rate: error response(status code:5xx)/all response * 100% in a month 
 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
