@@ -79,23 +79,38 @@ Description:  response get 500 error code on /api2
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
 
 SLI:
-+ avarage Latency/30d
-+ availability/30d
-+ avarage Response time/30d
++ Throughput of 30 days
++ avarage request Latency of 30 days
++ errors of 30 days
++ Saturation of 30 days
+
 
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-+ requests above 500ms
-    + to measure the latency of requests
++ Throughput of 30 days
+    + KPI
+        + Requests per second
+        + total requests per minute
 
-+ error rate
-    + to measure the availability
++ avarage Latency of 30 days
+    + KPI
+        + average response time[30]
+        + requests under 250ms
 
++ errors of 30 days
+    + KPI
+        + errors per second
+        + error rate
+
++ Saturation of 30 days
+    + KPI
+        + CPU usage
+        + Memory usage
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 
-![Alt text](./answer-img/final-dashboard.png)
+![Alt text](./answer-img/final-dashboard2.png)
