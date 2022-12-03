@@ -38,6 +38,7 @@
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
 ![Alt text](./answer-img/dashboard-for-CLI.png)
+![Alt text](./answer-img/dashboard-for-CLI2.png)
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
@@ -90,22 +91,22 @@ SLI:
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
 + Throughput of 30 days
-    + KPI
+    + KPI(using requests per unit time to measure the traffic in a system)
         + Requests per second
         + total requests per minute
 
 + avarage Latency of 30 days
-    + KPI
+    + KPI(use response time to measure the latency of system)
         + average response time[30]
         + requests under 250ms
 
 + errors of 30 days
-    + KPI
+    + KPI(using below kpi to measure how often error happens)
         + errors per second
         + error rate
 
 + Saturation of 30 days
-    + KPI
+    + KPI(CPU,Memory to measure the resource usage in a syste )
         + CPU usage
         + Memory usage
 
@@ -114,3 +115,27 @@ SLI:
 
 
 ![Alt text](./answer-img/final-dashboard2.png)
+
++ requests per second 
+    + as its name presents the number of requests per second
+
++ total rquests per miniute
+    + using bar chart and different color presents different status code
+
++ average response time[30]
+    + calculate averge response time in 30 seconds
+
++ requests under 250ms
+    + representing the number of requests whose latency is under 250 millisecond
+
++ errors per second
+    + how many error per second
+
++ error rate
+    + representing the rate of number of error requests/ total requests
+
++ Memeory usage
+    + reprenting the momory usage of host machine
+
++ CPU usage
+    + reprenting the cu usage of the host machine
